@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/account.css">
+    <link rel="icon" type="image/x-icon" href="/media/HedgeTrade (HEDG) (1).svg">
+    <title>HK | Mi Cuenta</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><img id="imgLogo" src="/media/HedgeTrade (HEDG) (1).svg" alt=""></a>
+            
+            <h1 id="Header_Title"><span id="Header_Title-Username"></span></h1>
+
+        </div>
+
+        <div class="searchContainer">
+            <form id="formSearch" method="get" class="search-form" onsubmit="submitForm(); return false;">
+                <div class="svgSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" style="fill: #828181;transform: msFilter"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
+                </div>
+
+                <input type="text" id="busqueda" name="q" placeholder="Search" required>
+                <p id="ctrlK">Ctrl K</p>
+            </form>
+        </div>
+
+        <div class="userPart">
+
+            <div class="svgChat">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><circle cx="9.5" cy="9.5" r="1.5"></circle><circle cx="14.5" cy="9.5" r="1.5"></circle><path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.515 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.671 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path></svg>
+            </div>
+
+            <div class="svgProfile">
+                <a href="/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg></a>
+            </div>
+
+            <a href="/html/account.html"><div class="user">
+                <p id="myName"></p>
+                
+                <div id="imgUserP">
+                    <img src="https://jobsaca.com.cy/wp-content/uploads/2015/05/icon-user-default.png">
+                </div>
+                <script>
+                    function mostrarImagenesGuardadas() {
+                        const contenedorImagenes = document.getElementById('imgUserP');
+                        const imagenesGuardadas = JSON.parse(localStorage.getItem('imagenes')) || [];
+
+                        contenedorImagenes.innerHTML = '';
+
+                        if (imagenesGuardadas.length > 0) {
+                            const imagen = document.createElement('img');
+                            imagen.src = imagenesGuardadas[imagenesGuardadas.length - 1];
+                            contenedorImagenes.appendChild(imagen);
+                        } else {
+                            const imagenDefecto = document.createElement('img');
+                            imagenDefecto.src = 'https://jobsaca.com.cy/wp-content/uploads/2015/05/icon-user-default.png'; 
+                            imagenDefecto.alt = 'Enlace por defecto';
+                            contenedorImagenes.appendChild(imagenDefecto);
+                        }
+                    }
+
+                    mostrarImagenesGuardadas();
+                </script>
+            </div></a>
+        </div>
+    </header>
+
+    <nav id="myNav">
+        <div class="navP1">
+            <div class="pHome">
+                <div class="svgHome">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill: #ffffff;transform: msFilter"><path d="m21.743 12.331-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a.998.998 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669z"></path></svg>
+                </div>
+                <a id="home" href="/html/home.html">Inicio</a>
+            </div>
+
+            <div class="pOrders">
+                <div class="svgOrders">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" style="fill: #ffffff;transform: msFilter"><path d="M20 3H4c-1.103 0-2 .897-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5c0-1.103-.897-2-2-2zm-1 9h-3.142c-.446 1.722-1.997 3-3.858 3s-3.412-1.278-3.858-3H4V5h16v7h-1z"></path></svg>
+                </div>
+                <a id="orders" href="/html/tuspublicaciones.html">Tus publicaciones</a>
+             
+            </div>
+
+            <div class="pCustomers">
+                <div class="svgCustomers">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill:#ffffff"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg>                
+                </div>
+                <a id="customers" href="/html/account.html">Tu cuenta</a>
+                
+            </div>
+
+            <div class="pDiscounts">
+                <div class="svgDiscounts"> 
+                    <svg viewBox="0 0 20 20" width="30" height="30" focusable="false" aria-hidden="true" style="fill:#ffffff"><path fill-rule="evenodd" d="M11.527 3.327c-.6-1.306-2.455-1.306-3.054 0a1.68 1.68 0 0 1-2.112.874c-1.347-.5-2.66.813-2.16 2.16a1.68 1.68 0 0 1-.874 2.112c-1.306.6-1.306 2.455 0 3.054a1.68 1.68 0 0 1 .874 2.112c-.5 1.347.813 2.659 2.16 2.16a1.68 1.68 0 0 1 2.112.874c.6 1.306 2.455 1.306 3.054 0a1.68 1.68 0 0 1 2.112-.874c1.347.499 2.66-.813 2.16-2.16a1.68 1.68 0 0 1 .874-2.112c1.306-.6 1.306-2.455 0-3.054a1.68 1.68 0 0 1-.874-2.112c.5-1.347-.813-2.66-2.16-2.16a1.68 1.68 0 0 1-2.112-.874Zm-2.527 4.923a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm3.53.53-4 4a.75.75 0 1 1-1.06-1.06l4-4a.75.75 0 1 1 1.06 1.06Zm.47 3.47a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+                </div>
+                <a id="discounts" href="/html/game.html">¡Juguemos!</a>
+            </div>
+        </div>
+
+        <div class="navP2">
+            <div class="pSales">
+                <p id="sales">Diseño Web</p>
+            </div>
+
+            <div class="pOnline">
+                <div class="svgOnline"> 
+                    <img id="svgOnline"  width="25" height="25" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;><path d=&quot;M5 11.18v4.445c0 .345.28.625.625.625h2.5v-2.5c0-.69.56-1.25 1.25-1.25h1.25c.69 0 1.25.56 1.25 1.25v2.5h2.5c.345 0 .625-.28.625-.625V11.18a2.822 2.822 0 0 1-2.813-.975A2.807 2.807 0 0 1 10 11.25a2.807 2.807 0 0 1-2.188-1.045A2.807 2.807 0 0 1 5 11.18ZM7.188 7.5v.938a1.562 1.562 0 1 1-3.125 0V7.5h3.125ZM8.438 8.438V7.5h3.124v.938a1.563 1.563 0 0 1-3.124 0ZM12.813 8.438V7.5h3.124v.938a1.563 1.563 0 0 1-3.124 0ZM4.305 6.25h11.39l-.69-2.073a.625.625 0 0 0-.593-.427H5.588a.625.625 0 0 0-.592.427L4.305 6.25Z&quot;/><path fill-rule=&quot;evenodd&quot; d=&quot;M5 0a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5H5ZM3.81 3.782A1.875 1.875 0 0 1 5.588 2.5h8.824c.807 0 1.523.516 1.778 1.282l.997 2.992v1.663c0 .833-.362 1.582-.937 2.097v5.091c0 1.035-.84 1.875-1.875 1.875h-8.75a1.875 1.875 0 0 1-1.875-1.875v-5.091a2.805 2.805 0 0 1-.938-2.097V6.774l.998-2.992Z&quot; clip-rule=&quot;evenodd&quot;/></svg>" alt="" aria-hidden="true">
+                </div>
+                <p id="online">Miguel Ballesteros</p>
+            </div>
+
+            <div class="pPoint">
+                <div class="svgPoint"> 
+                    <img id="svgPoint" width="25" height="25" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;><path d=&quot;M11.123 6.753c.141.045.201.196.154.337l-.434 1.296c-.06.179-.264.263-.443.2a2.891 2.891 0 0 0-.9-.158c-.997 0-1.041.624-1.041.782 0 .338.347.594.768.903.645.476 1.463 1.078 1.463 2.297 0 1.58-.998 2.6-2.35 2.6a3.257 3.257 0 0 1-2.313-.872.296.296 0 0 1-.078-.304l.242-.798c.065-.217.336-.3.525-.175.313.205.77.447 1.182.447a.63.63 0 0 0 .658-.64c0-.49-.352-.775-.747-1.095-.506-.41-1.082-.877-1.082-1.905 0-1.546 1.109-3.042 3.344-3.042.493-.014.843.06 1.052.127ZM8.957 4.047c.475-.094.712.364.62.773-.092.41-.41.77-.818.8-.407.03-.599-.32-.567-.674a1.045 1.045 0 0 1 .765-.9Z&quot;/><path fill-rule=&quot;evenodd&quot; d=&quot;M.545 2.73C0 3.8 0 5.2 0 8v4c0 2.8 0 4.2.545 5.27a5 5 0 0 0 2.185 2.185C3.8 20 5.2 20 8 20h4c2.8 0 4.2 0 5.27-.545a5 5 0 0 0 2.185-2.185C20 16.2 20 14.8 20 12V8c0-2.8 0-4.2-.545-5.27A5 5 0 0 0 17.27.545C16.2 0 14.8 0 12 0H8C5.2 0 3.8 0 2.73.545A5 5 0 0 0 .545 2.73Zm13.07 2.074L12.29 3.027a1.198 1.198 0 0 0-1.034-.526c-.19.014-.38.048-.564.102l-2.54.628-.998.244c-.269.063-.501.23-.649.464l-1.369 2c-.139.187-.23.406-.265.637-.025.168-.046.338-.066.507l-.004.03c-.22 1.724-.442 3.453-.667 5.186l-.299 2.316a5.235 5.235 0 0 1-.027.177c-.066.399-.163.987.26 1.107.278.08.571.126.862.172.142.023.284.046.424.072l7.052 1.34c.371.072.716-.08.798-.49.015-.105.023-.21.022-.316.028-.544.054-1.086.08-1.63l.271-5.56c.064-1.342.13-2.683.2-4.025a.895.895 0 0 0-.164-.658Zm.83 11.295.048-.994.272-5.56c.063-1.327.129-2.653.197-3.978.027-.244.011-.49-.046-.725.1.118.165.262.185.417l1.413 10.398a.49.49 0 0 1-.53.6l-1.539-.158Z&quot; clip-rule=&quot;evenodd&quot;/></svg>" alt="" aria-hidden="true">
+                </div>
+                <p id="point">Juan Pulgarín</p>
+            </div>
+        </div>
+
+        <div class="pSam">
+            <div class="svgSam"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3.33A1.67 1.67 0 1 1 10.33 7 1.67 1.67 0 0 1 12 5.33zm3.33 12.5-1.66.84-1.39-3.89h-.56l-1.39 3.89-1.66-.84 1.66-4.72v-1.66L7 10.33l.56-1.66 3.33 1.11h2.22l3.33-1.11.56 1.66-3.33 1.12v1.66z"></path></svg>
+            </div>
+            <p id="sam">Samuel Andrade</p>
+        </div>
+
+        <div class="navP3">
+            <div class="pApps">
+                <p id="apps">Subir publicación</p>
+            </div>
+
+            <div class="pAdd">
+                <div class="svgAdd"> 
+                    <svg viewBox="0 0 20 20" width="30" height="30" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true"><path d="M6.25 10a.75.75 0 0 1 .75-.75h2.25v-2.25a.75.75 0 0 1 1.5 0v2.25h2.25a.75.75 0 0 1 0 1.5h-2.25v2.25a.75.75 0 0 1-1.5 0v-2.25h-2.25a.75.75 0 0 1-.75-.75Z"></path><path fill-rule="evenodd" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"></path></svg>
+                </div>
+                <p id="add">Agregar publicación</p>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="profile">
+                <div id="imagenesGuardadas">
+                    <img src="https://jobsaca.com.cy/wp-content/uploads/2015/05/icon-user-default.png" alt="Foto de perfil">
+                </div>
+
+                <h2 id="Header_Title-Username2">User</h2>
+
+                <script>
+                    const userLocal = localStorage.getItem('loggedInUser');
+
+                    const h2Username = document.getElementById('Header_Title-Username2');
+
+                    h2Username.textContent = userLocal || 'Usuario';
+                </script>
+
+                <h2>Sube el enlace de la imagen de tu perfil...</h2>
+
+                <form id="formularioImagen">
+                    <input type="text" id="enlaceImagen" name="enlaceImagen" autocomplete="off">
+                    <button id="buttonGuardar" type="button" onclick="guardarEnlace()">Guardar</button>
+                    <hr id="lineImg">
+                </form>
+            </div>
+
+            <div class="containerUserN">
+                <div class="amigosH3">
+                    <h3 id="h3N">Amigos: </h3>
+                    <p id="ph3Amigos"></p>
+                </div>
+        
+                <div class="PublicionesH3">
+                    <h3 id="h3N">Publicaciones: </h3>
+                    <p id="ph3Publiciones"></p>
+                </div>
+        
+                <div class="SeguidoresH3">
+                    <h3 id="h3N">Seguidores: </h3>
+                    <p id="ph3Seguidores"></p>
+                </div>
+            </div>
+
+            <script>
+                function generarNumeroAleatorio(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+                var numeroAleatorio = generarNumeroAleatorio(1, 1000);
+                var numeroAleatorio2 = generarNumeroAleatorio(1, 1000);
+                var numeroAleatorio3 = generarNumeroAleatorio(1, 1000);
+    
+                const ph3Amigos = document.getElementById('ph3Amigos');
+                const ph3Publiciones = document.getElementById('ph3Publiciones');
+                const ph3Seguidores = document.getElementById('ph3Seguidores');
+            
+                ph3Amigos.textContent = numeroAleatorio;
+                ph3Publiciones.textContent = numeroAleatorio2;
+                ph3Seguidores.textContent = numeroAleatorio3;
+            </script>
+
+            <h3 id="h3N">Intereses:</h3>
+                <ul class="listaIntereses">
+                    <li id="intereses"></li>
+                    <li id="intereses2"></li>
+                    <li id="intereses3"></li>
+                </ul>
+            
+            <h3 id="statusUser"></h3>
+        </div>
+    </main>
+    
+    <footer>
+        <img src="/media/HedgeTrade (HEDG) (1).svg" alt="Logo de HK">
+        <p>Síguenos en las redes sociales</p>
+        <ul >
+            <li ><a href="/html/home.html" >Inicio</a></li>
+            <li ><a href="/css/tuspublicaciones.css" >Tus publicaciones</a></li>
+            <li ><a href="/html/account.html" >Tu cuenta</a></li>
+            <li ><a href="/html/game.html" >¡Juguemos!</a></li>
+            <li ><a href="/index.html" >Registrate</a></li>
+        </ul>
+        <p>&copy; 2023 HK - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/js/intereses.js"></script> 
+    <script src="/js/buscar.js"></script>
+    <script src="/js/guardarFoto.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/nameUser.js"></script>
+    <script src="/js/greetinLogic.js"></script>
+</body>
+</html>
